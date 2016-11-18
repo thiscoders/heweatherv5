@@ -55,7 +55,7 @@ public class Case01 {
     //解析json
     @Test
     public void test02() throws IOException {
-        File file = new File("src/thisget/xian.json");
+        File file = new File("src/down/xian.json");
         FileReader reader = new FileReader(file);
         Gson gson = new Gson();
         HeWeather5 heWeather5 = gson.fromJson(reader, HeWeather5.class);
