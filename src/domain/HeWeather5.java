@@ -3,6 +3,7 @@ package domain;
 import java.util.List;
 
 /**
+ * weather 的java bean
  * Created by ye on 11/18/16.
  */
 public class HeWeather5 {
