@@ -27,7 +27,7 @@ public class Case02 {
     @Test
     public void test01() throws IOException {
         String urls = "http://files.heweather.com/condition-code.txt";
-        Downloader.download(urls);
+        Downloader.printf(urls);
     }
 
     //解析天气状态并且保存到sqlite3数据库,以制表符分割
