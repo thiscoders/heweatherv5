@@ -18,7 +18,7 @@ import java.util.List;
 public class Case03 {
     QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
 
-    //获取城市列表的json文件
+    //下载城市列表的json文件
     @Test
     public void test011() throws IOException {
         String urls = "http://files.heweather.com/china-city-list.json";
@@ -37,7 +37,7 @@ public class Case03 {
         }
     }
 
-    //获取城市列表的txt文件
+    //下载城市列表的txt文件
     @Test
     public void test021() throws IOException {
         String urls = "http://files.heweather.com/china-city-list.txt";

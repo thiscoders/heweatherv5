@@ -3,8 +3,6 @@ package utils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
 
 /**
@@ -18,7 +16,7 @@ public class Downloader {
      * @param urls
      * @throws IOException
      */
-    public static void download(String urls) throws IOException {
+    public static void printf(String urls) throws IOException {
         URL url = new URL(urls);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET"); //请求方式 get
