@@ -1,7 +1,6 @@
 package utils;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 /**
  * Created by ye on 11/18/16.
@@ -9,7 +8,8 @@ import java.io.InputStream;
 public class StreamUtils {
 
     /**
-     *  将inputstream转化为string
+     * 将inputstream转化为string
+     *
      * @param inputStream 输入流
      * @return 字符串
      * @throws IOException
@@ -23,5 +23,19 @@ public class StreamUtils {
         }
         inputStream.close();
         return res;
+    }
+
+    /**
+     * 将inputstrem写入文件
+     *
+     * @param content  待写入的内容
+     * @param filePath 文件路径
+     * @throws IOException
+     */
+    public static void stream2File(String content, String filePath) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(new File(filePath)));
+        writer.write(content);
+        writer.flush();
+        writer.close();
     }
 }

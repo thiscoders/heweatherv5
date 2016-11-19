@@ -35,14 +35,15 @@ public class Case02 {
     public void test011() throws IOException, SQLException {
         //1.准备数据库
         queryRunner.update("drop table if exists wstatus");
-        queryRunner.update("create table wstatus(wno varchar(20),chin varchar(20),engl varchar(20),icon varchar(100))");
+        queryRunner.update("create table wstatus(wsid varchar(20),chin varchar(20),engl varchar(20),icon varchar(100))");
         //1.1.准备sql语句
         String sql = "insert into wstatus values(?,?,?,?)";
-        //2.解析数据
+        //2.获取数据
         File file = new File("src/down/wstatus.txt");
         BufferedReader reader = new BufferedReader(new FileReader(file));
         String line;
         int num = 1;
+        //3.解析数据并放入数据库
         while ((line = reader.readLine()) != null) {
             if (num < 3) {
                 num++;
@@ -65,7 +66,7 @@ public class Case02 {
     }
 
 
-    //解析天气状态并且保存到sqlite3数据库
+    //解析天气状态并且打印到控制台
     @Test
     public void test013() throws IOException {
         File file = new File("src/down/wstatus.txt");
@@ -81,13 +82,5 @@ public class Case02 {
             count++;
         }
         System.out.println(count);
-    }
-
-
-    //获取城市列表
-    @Test
-    public void test02() throws IOException {
-        String urls = "http://files.heweather.com/china-city-list.json";
-        Downloader.download(urls);
     }
 }

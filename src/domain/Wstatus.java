@@ -5,17 +5,17 @@ package domain;
  */
 public class Wstatus {
     //wno varchar(20),chin varchar(20),engl varchar(20),icon varchar(100)
-    private String wno;
+    private String wsid;
     private String chin;
     private String engl;
     private String icon;
 
-    public String getWno() {
-        return wno;
+    public String getWsid() {
+        return wsid;
     }
 
-    public void setWno(String wno) {
-        this.wno = wno;
+    public void setWsid(String wno) {
+        this.wsid = wsid;
     }
 
     public String getChin() {
@@ -45,7 +45,7 @@ public class Wstatus {
     @Override
     public String toString() {
         return "Wstatus{" +
-                "wno='" + wno + '\'' +
+                "wsid='" + wsid + '\'' +
                 ", chin='" + chin + '\'' +
                 ", engl='" + engl + '\'' +
                 ", icon='" + icon + '\'' +

@@ -14,6 +14,7 @@ public class Downloader {
 
     /**
      * 下载并且处理源码
+     *
      * @param urls
      * @throws IOException
      */
@@ -31,6 +32,30 @@ public class Downloader {
             codes = StreamUtils.stream2String(in);
         }
         System.out.println(codes);
+    }
+
+    /**
+     * 将文件下载到本地
+     *
+     * @param urls
+     * @param filePath
+     * @throws IOException
+     */
+    public static void download(String urls, String filePath) throws IOException {
+        URL url = new URL(urls);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("GET"); //请求方式 get
+        connection.setConnectTimeout(5000); //连接超时时间5s
+        connection.setReadTimeout(10000); //读取超时时间10s
+
+        int res = connection.getResponseCode();
+        String codes = null;
+        if (res == 200) {
+            InputStream in = connection.getInputStream();
+            codes = StreamUtils.stream2String(in);
+            StreamUtils.stream2File(codes, filePath);
+        }
+        System.out.println("下载完成");
     }
 
 }
