@@ -25,7 +25,7 @@ public class Case03 {
         Downloader.download(urls, "src/down/citys2.json");
     }
 
-    //解析json文件病规格化打印
+    //解析json文件病规格化打印，此方法未启用
     @Test
     public void test012() throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(new File("src/down/citys.json")));
@@ -44,7 +44,7 @@ public class Case03 {
         Downloader.download(urls, "src/down/cities.txt");
     }
 
-    //解析城市列表的txt文件
+    //按行打印城市列表的txt文件
     @Test
     public void test022() throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(new File("src/down/cities.txt")));
@@ -57,7 +57,7 @@ public class Case03 {
         reader.close();
     }
 
-    //解析城市列表的txt文件
+    //解析城市列表的txt文件并且保存到数据库中
     @Test
     public void test023() throws IOException, SQLException {
 
@@ -89,6 +89,7 @@ public class Case03 {
             queryRunner.update(sql, parts);
         }
         reader.close();
+        System.out.println("数据表添加完成！");
     }
 
     //从数据库中读取城市列表信息
