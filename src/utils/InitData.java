@@ -21,6 +21,11 @@ public class InitData {
             e.printStackTrace();
         }
     }
+
+    public static String getUrlsV5() throws IOException {
+        return properties.getProperty("urlsv5");
+    }
+
     public static String getUrls() throws IOException {
         return properties.getProperty("urls");
     }

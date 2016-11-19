@@ -26,7 +26,7 @@ public class StreamUtils {
     }
 
     /**
-     * 将inputstrem写入文件
+     * 将文字内容写入文件
      *
      * @param content  待写入的内容
      * @param filePath 文件路径
